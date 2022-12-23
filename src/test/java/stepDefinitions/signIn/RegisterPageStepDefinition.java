@@ -1,4 +1,4 @@
-package stepDefinitions.register;
+package stepDefinitions.signIn;
 
 public class RegisterPageStepDefinition {
 }

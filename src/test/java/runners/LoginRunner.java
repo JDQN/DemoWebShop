@@ -8,10 +8,10 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         snippets = CucumberOptions.SnippetType.CAMELCASE,
         publish = true,
-        features = {"src/test/resources/features/contact/contact.feature"},
+        features = {"src/test/resources/features/login/login.feature"},
         glue = "stepDefinitions.contact",
         plugin = {"pretty", "html:target/cucumber-reports.html"}
 )
-public class ContactRunner {
+public class LoginRunner {
 
 }
