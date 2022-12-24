@@ -5,11 +5,12 @@ Feature: Ingresar al aplicativo web DemoShop
   Background:
     Given que el cliente entro al aplicativo DemoShop
 
-  Scenario: 04 -Ingreso correcto del Login
+
+  Scenario: 03 -Ingreso correcto del Login
     When ingrese los datos Email y Password correctamente
     Then entrara a la cuenta.
 
 
-  Scenario: 05 -Ingreso incorrecto del Login
+  Scenario: 04 -Ingreso incorrecto del Login
     When no ingrese los datos Email y Password correctamente
     Then recibira un mensaje Login was unsuccessful. Please correct the errors and try again.The credentials provided are incorrect

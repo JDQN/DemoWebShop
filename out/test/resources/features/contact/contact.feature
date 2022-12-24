@@ -3,8 +3,7 @@ Feature: Store customer service Demo Web Shop
   Background:
     Given que el cliente ingrese a la pagina Demo Web Shop y dar click en el campo Conatc Us
 
-
-  Scenario: 01 Como usuario deseo contactarme con servicio al cliente
+  Scenario: 01 - Como usuario deseo contactarme con servicio al cliente
     When diligencia el formulario correctamente
     Then recibira un mensaje Your enquiry has been successfully sent to the store owner.
 

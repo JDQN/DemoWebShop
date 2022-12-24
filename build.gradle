@@ -24,6 +24,7 @@ dependencies {
     implementation 'io.cucumber:cucumber-java:7.10.1'
 
     implementation 'org.projectlombok:lombok:1.18.24'
+    implementation 'com.github.javafaker:javafaker:1.0.2'
 
 }
 

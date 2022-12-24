@@ -22,7 +22,11 @@ public class ContactPage extends BasePage {
     //id="email"
     @CacheLookup
     @FindBy(id = "Email")
-    private WebElement email;
+    private WebElement Email;
+
+    @CacheLookup
+    @FindBy(id = "Password")
+    private WebElement Password;
 
     @CacheLookup
     @FindBy(id = "Enquiry")
@@ -45,7 +49,6 @@ public class ContactPage extends BasePage {
     private WebElement successMessage;
 
 
-
     //Constructor
     public ContactPage(WebDriver driver, int seconds) {
         super(driver, seconds);
@@ -55,7 +58,7 @@ public class ContactPage extends BasePage {
     public void fillContactFields() {
         try {
             typeOnTextField(FullName, "Juand");
-            typeOnTextField(email, "juanddd@gmail.com");
+            typeOnTextField(Email, "juanddd@gmail.com");
             typeOnTextField(Enquiry, "Estoy teniendo problamas con la pagina 1");
             clickOnElement(sendButton);
         } catch (Exception e) {
@@ -70,8 +73,6 @@ public class ContactPage extends BasePage {
         return isDisplayed(successfulQuery);
     }
 
-
-
     public void CompleteformConatctUs() {
         try {
             typeOnTextField(FullName, "Juand");
@@ -82,7 +83,7 @@ public class ContactPage extends BasePage {
         }
     }
     public void EmailEmpty(){
-        typeOnTextField(email, "");
+        typeOnTextField(Email, "");
     }
     public boolean MessageEnterEmail(){
         return isDisplayed(Enteremail);
@@ -92,4 +93,5 @@ public class ContactPage extends BasePage {
     public String getSuccessMessageText() {
         return getTextFromElement(successMessage);
     }
+
 }
