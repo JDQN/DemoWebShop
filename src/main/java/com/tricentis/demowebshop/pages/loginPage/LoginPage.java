@@ -1,6 +1,7 @@
 package com.tricentis.demowebshop.pages.loginPage;
 
 import com.tricentis.demowebshop.common.BasePage;
+import com.tricentis.demowebshop.model.UserRegistre;
 import com.tricentis.demowebshop.pages.contactPage.ContactPage;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
@@ -15,6 +16,10 @@ public class LoginPage extends BasePage {
     @CacheLookup
     @FindBy(xpath = "//a[contains(text(),'Log in')]")
     private WebElement LoginLink;
+
+    @CacheLookup
+    @FindBy(xpath = "//a[contains(text(),'Log out')]")
+    private WebElement LogOutLink;
 
     @CacheLookup
     @FindBy(id = "Email")
@@ -48,11 +53,14 @@ public class LoginPage extends BasePage {
     public void clickOnLogin(){
         clickOnElement(LoginLink);
     }
+    public void clickOnLogOut(){
+        clickOnElement(LogOutLink);
+    }
 
-    public void fillLoginFields() {
+    public void fillLoginFields(UserRegistre userRegistre) {
         try {
-            typeOnTextField(Email,"admin1@admin.com");
-            typeOnTextField(Password,"123456");
+            typeOnTextField(Email, userRegistre.getEmail());
+            typeOnTextField(Password, userRegistre.getPassword());
             clickOnElement(LogIn);
         } catch (Exception e) {
             LOGGER.error("Error al llenar los campos email o password");

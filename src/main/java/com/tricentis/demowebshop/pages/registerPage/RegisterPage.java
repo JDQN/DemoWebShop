@@ -64,6 +64,7 @@ public class RegisterPage extends BasePage {
     public void clickOnRegister(){
         clickOnElement(registerLink);
     }
+
     public void completeformRegister(UserRegistre userRegistre) {
         try {
             typeOnTextField(firstName, userRegistre.getFirstName());
@@ -75,6 +76,9 @@ public class RegisterPage extends BasePage {
         } catch (Exception e) {
             LOGGER.error("Error al llenar los campos de contacto");
         }
+    }
+    public void registerUserBtn(){
+        clickOnElement(registerLinkBtn);
     }
     public boolean searchMessageRegister(){
         return isDisplayed(successRegister);
