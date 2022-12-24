@@ -1,5 +1,7 @@
 package stepDefinitions.signIn;
 
+import com.github.javafaker.Faker;
+import com.tricentis.demowebshop.model.UserRegistre;
 import com.tricentis.demowebshop.pages.contactPage.ContactPage;
 import com.tricentis.demowebshop.pages.registerPage.RegisterPage;
 import io.cucumber.java.en.And;
@@ -14,6 +16,7 @@ import stepDefinitions.setup.BaseTestPage;
 public class SignInPageStepDefinition extends BaseTestPage {
 
     private static final Logger LOGGER = Logger.getLogger(LoginRunner.class);
+    private UserRegistre userRegistre;
 
     @Given("que el cliente entro a la pagina de registro")
     public void queElClienteEntroALaPaginaDeRegistro() {
@@ -22,6 +25,7 @@ public class SignInPageStepDefinition extends BaseTestPage {
             setUpWebDriver();
             generalSetup();
             RegisterPage registerPage = new RegisterPage(driver, 3);
+            GenerateUserRegister();
             registerPage.clickOnRegister();
         }catch (Exception exception){
             Assertions.fail(exception.getMessage(), exception);
@@ -33,7 +37,7 @@ public class SignInPageStepDefinition extends BaseTestPage {
     public void ingreseLosDatosDelFormularioCorrectamente() {
         try{
             RegisterPage registerPage = new RegisterPage(driver, 3);
-            registerPage.completeformRegister();
+            registerPage.completeformRegister(userRegistre);
         }catch (Exception exception){
             Assertions.fail(exception.getMessage(), exception);
             LOGGER.error(exception.getMessage(), exception);
@@ -51,7 +55,6 @@ public class SignInPageStepDefinition extends BaseTestPage {
             quiteDriver();
         }
     }
-
     @Then("da click en el boton continuar")
     public void daClickEnElBotonContinuar() {
         try {
@@ -83,6 +86,16 @@ public class SignInPageStepDefinition extends BaseTestPage {
     @Then("recibira un mensaje required de los campos que hacen falta por diligenciar")
     public void recibiraUnMensajeRequiredDeLosCamposQueHacenFaltaPorDiligenciar() {
 
+    }
+
+    private void GenerateUserRegister(){
+        Faker faker = new Faker();
+        userRegistre = new UserRegistre();
+
+        userRegistre.setFirstName(faker.name().firstName());
+        userRegistre.setLastName(faker.name().lastName());
+        userRegistre.setEmail(userRegistre.getFirstName()+userRegistre.getLastName()+"@gmail.com");
+        userRegistre.setPassword("1234567");
     }
 
 }

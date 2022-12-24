@@ -1,6 +1,8 @@
 package com.tricentis.demowebshop.pages.registerPage;
 
+import com.github.javafaker.Faker;
 import com.tricentis.demowebshop.common.BasePage;
+import com.tricentis.demowebshop.model.UserRegistre;
 import com.tricentis.demowebshop.pages.contactPage.ContactPage;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
@@ -11,6 +13,7 @@ import org.openqa.selenium.support.FindBy;
 public class RegisterPage extends BasePage {
 
     private static Logger LOGGER = Logger.getLogger(RegisterPage.class);
+    Faker faker = new Faker();
 
     @CacheLookup
     @FindBy(xpath = "/html/body/div[4]/div[1]/div[1]/div[2]/div[1]/ul/li[1]/a")
@@ -61,13 +64,13 @@ public class RegisterPage extends BasePage {
     public void clickOnRegister(){
         clickOnElement(registerLink);
     }
-    public void completeformRegister() {
+    public void completeformRegister(UserRegistre userRegistre) {
         try {
-            typeOnTextField(firstName, "Juan1");
-            typeOnTextField(lastName, "Perez");
-            typeOnTextField(email, "argentina3@gmail.com");
-            typeOnTextField(password, "123456");
-            typeOnTextField(confirmPassword, "123456");
+            typeOnTextField(firstName, userRegistre.getFirstName());
+            typeOnTextField(lastName, userRegistre.getLastName());
+            typeOnTextField(email, userRegistre.getEmail());
+            typeOnTextField(password, userRegistre.getPassword());
+            typeOnTextField(confirmPassword, userRegistre.getPassword());
             clickOnElement(registerLinkBtn);
         } catch (Exception e) {
             LOGGER.error("Error al llenar los campos de contacto");
