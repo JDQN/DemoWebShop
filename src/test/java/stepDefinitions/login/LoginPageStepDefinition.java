@@ -13,6 +13,13 @@ import runners.ContactRunner;
 import runners.LoginRunner;
 import stepDefinitions.setup.BaseTestPage;
 
+/*
+ * @Author:<jdquimbayo72@gmail.com>
+ * @version: 01
+ * @Class: LoginPageStepDefinition
+ * Se optienen los steup de login.feature se instanbcia la class LoginPage
+ * se llama el metodo necesario para el step y esta calse estiende de BaseTestPage
+ */
 public class LoginPageStepDefinition extends BaseTestPage {
 
     private static final Logger LOGGER = Logger.getLogger(LoginRunner.class);
@@ -53,6 +60,7 @@ public class LoginPageStepDefinition extends BaseTestPage {
             */
             loginPage.clickOnLogOut();
             loginPage.clickOnLogin();
+            quiteDriver();
         }catch (Exception exception){
             Assertions.fail(exception.getMessage(), exception);
             LOGGER.error(exception.getMessage(), exception);
@@ -69,6 +77,7 @@ public class LoginPageStepDefinition extends BaseTestPage {
             * parametro a loginPage.fillLoginFields
             */
             loginPage.fillLoginFields(userRegistre);
+            quiteDriver();
         }catch (Exception exception){
             Assertions.fail(exception.getMessage(), exception);
             LOGGER.error(exception.getMessage(), exception);
@@ -80,6 +89,7 @@ public class LoginPageStepDefinition extends BaseTestPage {
         try {
             LoginPage loginPage = new LoginPage(driver, 3);
             loginPage.titleWelcomeStore();
+            quiteDriver();
         }catch (Exception exception){
             Assertions.fail(exception.getMessage(), exception);
             LOGGER.error(exception.getMessage(), exception);
@@ -94,6 +104,7 @@ public class LoginPageStepDefinition extends BaseTestPage {
         try {
             LoginPage loginPage = new LoginPage(driver, 3);
             loginPage.fillLoginEmpty();
+            quiteDriver();
         }catch (Exception exception){
             Assertions.fail(exception.getMessage(), exception);
             LOGGER.error(exception.getMessage(), exception);
@@ -107,6 +118,7 @@ public class LoginPageStepDefinition extends BaseTestPage {
         try {
             LoginPage loginPage = new LoginPage(driver, 3);
             loginPage.fillLoginEmpty();
+            quiteDriver();
         }catch (Exception exception){
             Assertions.fail(exception.getMessage(), exception);
             LOGGER.error(exception.getMessage(), exception);

@@ -1,7 +1,7 @@
 package stepDefinitions.contact;
 
-
-
+import com.github.javafaker.Faker;
+import com.tricentis.demowebshop.model.FormContact;
 import com.tricentis.demowebshop.pages.contactPage.ContactPage;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
@@ -15,10 +15,18 @@ import runners.ContactRunner;
 import stepDefinitions.setup.BaseTestPage;
 
 
+/*
+* @Author:<jdquimbayo72@gmail.com>
+* @version: 01
+* @Class: ContactPageStepDefinition
+* Se optienen los steup de contact.feature y se instanbcia la class ContactPage
+* y se llama el metodo necesario para el step
+*/
 public class ContactPageStepDefinition extends BaseTestPage {
 
 
     private static final Logger LOGGER = Logger.getLogger(ContactRunner.class);
+    private FormContact formContact;
 
     //Esenario 01
     @Given("que el cliente ingrese a la pagina Demo Web Shop y dar click en el campo Conatc Us")
@@ -28,6 +36,7 @@ public class ContactPageStepDefinition extends BaseTestPage {
             setUpWebDriver();
             generalSetup();
             ContactPage contactPage = new ContactPage(driver, 3);
+            GenerateDatosForm();
             contactPage.clickOnContactUs();
         }catch (Exception exception){
             Assertions.fail(exception.getMessage(), exception);
@@ -40,7 +49,7 @@ public class ContactPageStepDefinition extends BaseTestPage {
     public void diligenciaElFormularioCorrectamente() {
         try {
             ContactPage contactPage = new ContactPage(driver, 3);
-            contactPage.fillContactFields();
+            contactPage.fillContactFields(formContact);
         }catch (Exception exception){
             Assertions.fail(exception.getMessage(), exception);
             LOGGER.error(exception.getMessage(), exception);
@@ -66,7 +75,7 @@ public class ContactPageStepDefinition extends BaseTestPage {
     public void diligenciaElFormularioContactUs() {
         try {
             ContactPage contactPage = new ContactPage(driver, 3);
-            contactPage.CompleteformConatctUs();
+            contactPage.CompleteformConatctUs(formContact);
         }catch (Exception exception){
             Assertions.fail(exception.getMessage(), exception);
             LOGGER.error(exception.getMessage(), exception);
@@ -98,6 +107,14 @@ public class ContactPageStepDefinition extends BaseTestPage {
             LOGGER.error(exception.getMessage(), exception);
             quiteDriver();
         }
+    }
+
+    private void GenerateDatosForm(){
+        Faker faker = new Faker();
+        formContact = new FormContact();
+        formContact.setFirstName(faker.name().firstName());
+        formContact.setEmail(formContact.getFirstName() + "@gmail.com");
+
     }
 
 }

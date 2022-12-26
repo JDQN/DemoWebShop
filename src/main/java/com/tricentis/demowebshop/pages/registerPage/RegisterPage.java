@@ -64,7 +64,6 @@ public class RegisterPage extends BasePage {
     public void clickOnRegister(){
         clickOnElement(registerLink);
     }
-
     public void completeformRegister(UserRegistre userRegistre) {
         try {
             typeOnTextField(firstName, userRegistre.getFirstName());

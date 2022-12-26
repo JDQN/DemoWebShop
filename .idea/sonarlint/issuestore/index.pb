@@ -1,7 +1,11 @@
 
-G
-src/test/java/README.md,6\e\6eae351dd2decb6b7200b9eaeb93accd5d0a5ef7
-W
-'src/test/java/stepDefinitions/README.md,8\3\83d1b5d8795f167c63597535627b390698f23894
-v
-Fsrc/test/java/stepDefinitions/register/RegisterPageStepDefinition.java,8\6\865d136f43a295146d858c807541324ab4aca2a0
+X
+(target/cucumber-reportsLoginRaunner.html,f\7\f73d995bd3388352e9d8e4519e3eddfe6591996c
+Y
+)target/cucumber-reportsContactRunner.html,a\e\ae63a9bf7475070c4f3582f03e4bbe8e174cd3b3
+X
+(target/cucumber-reportsSingInRunner.html,7\1\7166d3d108b09f6c9abb26d8f7ee6ebdfc7e117e
+o
+?src/main/java/com/tricentis/demowebshop/model/UserRegistre.java,0\0\008e200add099a4234a6ce3eaf8dbf7883f223b3
+n
+>src/main/java/com/tricentis/demowebshop/model/FormContact.java,3\f\3f402a3665e46f6055f70284d3e148cfdbf85bb4

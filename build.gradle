@@ -26,6 +26,7 @@ dependencies {
     implementation 'org.projectlombok:lombok:1.18.24'
     implementation 'com.github.javafaker:javafaker:1.0.2'
 
+    implementation 'tech.grasshopper:extentreports-cucumber7-adapter:1.7.0'
 }
 
 test {

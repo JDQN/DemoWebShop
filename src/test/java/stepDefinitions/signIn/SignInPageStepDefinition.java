@@ -13,6 +13,14 @@ import org.junit.jupiter.api.Assertions;
 import runners.LoginRunner;
 import stepDefinitions.setup.BaseTestPage;
 
+
+/*
+ * @Author:<jdquimbayo72@gmail.com>
+ * @version: 01
+ * @Class: SignInPageStepDefinition
+ * Se optienen los steup de register.feature se instanbcia la class RegisterPage
+ * se llama el metodo necesario para el step y esta calse estiende de BaseTestPage
+ */
 public class SignInPageStepDefinition extends BaseTestPage {
 
     private static final Logger LOGGER = Logger.getLogger(LoginRunner.class);

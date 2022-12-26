@@ -1,6 +1,8 @@
 package com.tricentis.demowebshop.pages.contactPage;
 
+import com.github.javafaker.Faker;
 import com.tricentis.demowebshop.common.BasePage;
+import com.tricentis.demowebshop.model.FormContact;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -10,6 +12,8 @@ import org.openqa.selenium.support.FindBy;
 public class ContactPage extends BasePage {
 
     private static Logger LOGGER = Logger.getLogger(ContactPage.class);
+
+    Faker faker = new Faker();
 
     @CacheLookup
     @FindBy(xpath = "//a[contains(text(),'Contact us')]")
@@ -55,10 +59,10 @@ public class ContactPage extends BasePage {
         pageFactoryInitElement(driver, this);
     }
 
-    public void fillContactFields() {
+    public void fillContactFields(FormContact formContact) {
         try {
-            typeOnTextField(FullName, "Juand");
-            typeOnTextField(Email, "juanddd@gmail.com");
+            typeOnTextField(FullName, formContact.getFirstName());
+            typeOnTextField(Email, formContact.getEmail());
             typeOnTextField(Enquiry, "Estoy teniendo problamas con la pagina 1");
             clickOnElement(sendButton);
         } catch (Exception e) {
@@ -73,9 +77,9 @@ public class ContactPage extends BasePage {
         return isDisplayed(successfulQuery);
     }
 
-    public void CompleteformConatctUs() {
+    public void CompleteformConatctUs(FormContact formContact) {
         try {
-            typeOnTextField(FullName, "Juand");
+            typeOnTextField(FullName, formContact.getFirstName());
             typeOnTextField(Enquiry, "Estoy teniendo problamas con la pagina 1");
             clickOnElement(sendButton);
         } catch (Exception e) {

@@ -10,7 +10,7 @@ import org.junit.runner.RunWith;
         publish = true,
         features = {"src/test/resources/features/signIn/signIn.feature"},
         glue = "stepDefinitions.signIn",
-        plugin = {"pretty", "html:target/cucumber-reports.html"}
+        plugin = {"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:","html:target/SingnInReports.html"}
 )
 public class SignInRunner {
 
