@@ -12,7 +12,7 @@ import org.openqa.selenium.support.FindBy;
 
 public class RegisterPage extends BasePage {
 
-    private static Logger LOGGER = Logger.getLogger(RegisterPage.class);
+    private static final Logger LOGGER = Logger.getLogger(RegisterPage.class);
     Faker faker = new Faker();
 
     @CacheLookup

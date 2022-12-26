@@ -68,7 +68,6 @@ public class SignInPageStepDefinition extends BaseTestPage {
         try {
             RegisterPage registerPage = new RegisterPage(driver, 3);
             registerPage.clickOnContinueBtn();
-            Thread.sleep(3000);
             quiteDriver();
         } catch (Exception exception) {
             Assertions.fail(exception.getMessage(), exception);

@@ -11,7 +11,7 @@ import org.openqa.selenium.support.FindBy;
 
 public class ContactPage extends BasePage {
 
-    private static Logger LOGGER = Logger.getLogger(ContactPage.class);
+    private static final Logger LOGGER = Logger.getLogger(ContactPage.class);
 
     Faker faker = new Faker();
 
@@ -21,20 +21,20 @@ public class ContactPage extends BasePage {
 
     @CacheLookup
     @FindBy(id = "FullName")
-    private WebElement FullName;
+    private WebElement fullName;
 
     //id="email"
     @CacheLookup
     @FindBy(id = "Email")
-    private WebElement Email;
+    private WebElement email;
 
     @CacheLookup
     @FindBy(id = "Password")
-    private WebElement Password;
+    private WebElement password;
 
     @CacheLookup
     @FindBy(id = "Enquiry")
-    private WebElement Enquiry;
+    private WebElement enquiry;
 
     @CacheLookup
     @FindBy(name = "send-email")
@@ -46,7 +46,7 @@ public class ContactPage extends BasePage {
 
     @CacheLookup
     @FindBy(xpath = "//span[contains(text(),'Enter email')]")
-    private WebElement Enteremail;
+    private WebElement enteremail;
 
     @CacheLookup
     @FindBy(xpath = "//*[@id='rightPanel']/p[2]")
@@ -61,9 +61,9 @@ public class ContactPage extends BasePage {
 
     public void fillContactFields(FormContact formContact) {
         try {
-            typeOnTextField(FullName, formContact.getFirstName());
-            typeOnTextField(Email, formContact.getEmail());
-            typeOnTextField(Enquiry, "Estoy teniendo problamas con la pagina 1");
+            typeOnTextField(fullName, formContact.getFirstName());
+            typeOnTextField(email, formContact.getEmail());
+            typeOnTextField(enquiry, "Estoy teniendo problamas con la pagina 1");
             clickOnElement(sendButton);
         } catch (Exception e) {
             LOGGER.error("Error al llenar los campos de contacto");
@@ -77,20 +77,20 @@ public class ContactPage extends BasePage {
         return isDisplayed(successfulQuery);
     }
 
-    public void CompleteformConatctUs(FormContact formContact) {
+    public void completeformConatctUs(FormContact formContact) {
         try {
-            typeOnTextField(FullName, formContact.getFirstName());
-            typeOnTextField(Enquiry, "Estoy teniendo problamas con la pagina 1");
+            typeOnTextField(fullName, formContact.getFirstName());
+            typeOnTextField(enquiry, "Estoy teniendo problamas con la pagina 1");
             clickOnElement(sendButton);
         } catch (Exception e) {
             LOGGER.error("Error al llenar los campos de contacto");
         }
     }
-    public void EmailEmpty(){
-        typeOnTextField(Email, "");
+    public void emailEmpty(){
+        typeOnTextField(email, "");
     }
-    public boolean MessageEnterEmail(){
-        return isDisplayed(Enteremail);
+    public boolean messageEnterEmail(){
+        return isDisplayed(enteremail);
     }
 
 

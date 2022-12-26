@@ -75,7 +75,7 @@ public class ContactPageStepDefinition extends BaseTestPage {
     public void diligenciaElFormularioContactUs() {
         try {
             ContactPage contactPage = new ContactPage(driver, 3);
-            contactPage.CompleteformConatctUs(formContact);
+            contactPage.completeformConatctUs(formContact);
         }catch (Exception exception){
             Assertions.fail(exception.getMessage(), exception);
             LOGGER.error(exception.getMessage(), exception);
@@ -87,8 +87,7 @@ public class ContactPageStepDefinition extends BaseTestPage {
     public void noIngresaUnCorreoElectronico() {
         try {
             ContactPage contactPage = new ContactPage(driver, 3);
-            Thread.sleep(3000);
-            contactPage.EmailEmpty();
+            contactPage.emailEmpty();
         }catch (Exception exception){
             Assertions.fail(exception.getMessage(), exception);
             LOGGER.error(exception.getMessage(), exception);
@@ -100,7 +99,7 @@ public class ContactPageStepDefinition extends BaseTestPage {
     public void recibiraUnMensajeEnterEmail() {
         try {
             ContactPage contactPage = new ContactPage(driver,3);
-            Assertions.assertEquals(true,contactPage.MessageEnterEmail());
+            Assertions.assertEquals(true,contactPage.messageEnterEmail());
             quiteDriver();
         } catch (Exception exception) {
             Assertions.fail(exception.getMessage(), exception);
