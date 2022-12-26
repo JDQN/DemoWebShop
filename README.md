@@ -45,7 +45,7 @@
 
 <h3>Reto de automatización en sitio web demo</h3>
 <p>
-  Es necesario verificar el funcionamiento de algunos módulos para la página web http://institucional7.sublimesolutions.com 
+  Es necesario verificar el funcionamiento de algunos módulos para la página web https://demowebshop.tricentis.com/ 
   Módulos:
   Contacto.
   Registro.
