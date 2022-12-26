@@ -1,12 +1,17 @@
-### Reto de automatización web - POM con Page Factory 
+<h2>
+☕ Reto de automatización web - POM con Page Factory 
+<h2>
 
 
+ <h4>
+  🚀 Dirigido a 👨‍💻 Sofka University.
+   
+  - 👨‍💻 &nbsp; Coach Juan Esteban CardonaA Nieto
 
-🚀 Dirigido a 👨‍💻 Sofka University.
-- 👨‍💻 Coach Juan Esteban CardonaA Nieto
-
-🚀 Presentado por
-- 🎓 &nbsp; Juan David Quimbayo Nuñez.
+  🚀 Presentado por
+  - 🎓 &nbsp; Juan David Quimbayo Nuñez.
+ <h4>
+   
 
 
 <h3>🛠 Stack 🛠 </h3>
@@ -15,13 +20,13 @@
 - 🛢 &nbsp; SELENIUM |
 - 💻 &nbsp; JAVA FAKER | HTML
 
-
+<hr>
 <p>
   Se implemento Page Object Model, también conocido como POM, que es un patrón de diseño en Selenium que crea un repositorio de objetos para almacenar 
   todos los elementos web. Ayuda a reducir la duplicación de código y mejora el mantenimiento de casos de prueba.
 </p>
 
-
+<hr>
 
 <h3>Consideraciones</h3>
 
@@ -42,6 +47,7 @@
 * Recuerde que las automatizaciones deben ser independientes unas de otras, es decir, los escenario no pueden tener dependencias unos de otros. Las automatizaciones siempre deben ser repetibles.
 </p>
 
+<hr>
 
 <h3>Reto de automatización en sitio web demo</h3>
 <p>
