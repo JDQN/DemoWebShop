@@ -12,6 +12,12 @@
   - 🎓 &nbsp; Juan David Quimbayo Nuñez.
  <h4>
    
+  
+  <strong>
+   🌐 Link Plan de pruebas: 
+   
+    https://docs.google.com/document/d/17_FrnepWzvegcpuH5L2eHORoCnjp5buV/edit?usp=sharing&ouid=108439484073815695052&rtpof=true&sd=true
+  <strong>
 
 
 <h3>🛠 Stack 🛠 </h3>
